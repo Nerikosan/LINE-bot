@@ -3,14 +3,14 @@ $json_string = file_get_contents('php://input');
 $jsonObj = json_decode($json_string);
 $to = $jsonObj->{"result"}[0]->{"content"}->{"from"};
 
-// ãƒ†ã‚­ã‚¹ãƒˆã§è¿”äº‹ã‚’ã™ã‚‹å ´åˆ
+// ƒeƒLƒXƒg‚Å•ÔŽ–‚ð‚·‚éê‡
 $response_format_text = ['contentType'=>1,"toType"=>1,"text"=>"hello!"];
-// ç”»åƒã§è¿”äº‹ã‚’ã™ã‚‹å ´åˆ
-//$response_format_image = ['contentType'=>2,"toType"=>1,'originalContentUrl'=>"ç”»åƒURL","previewImageUrl"=>"ã‚µãƒ ãƒã‚¤ãƒ«ç”»åƒURL"];
-// ä»–ã«ã‚‚è‰²ã€…ã‚ã‚‹
+// ‰æ‘œ‚Å•ÔŽ–‚ð‚·‚éê‡
+//$response_format_image = ['contentType'=>2,"toType"=>1,'originalContentUrl'=>"‰æ‘œURL","previewImageUrl"=>"ƒTƒ€ƒlƒCƒ‹‰æ‘œURL"];
+// ‘¼‚É‚àFX‚ ‚é
 // ....
 
-// toChannelã¨eventTypeã¯å›ºå®šå€¤ãªã®ã§ã€å¤‰æ›´ä¸è¦ã€‚
+// toChannel‚ÆeventType‚ÍŒÅ’è’l‚È‚Ì‚ÅA•ÏX•s—vB
 $post_data = ["to"=>[$to],"toChannel"=>"1383378250","eventType"=>"138311608800106203","content"=>$response_format_text];
 
 $ch = curl_init("https://trialbot-api.line.me/v1/events");
